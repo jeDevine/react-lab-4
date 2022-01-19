@@ -10,15 +10,15 @@ const Main = () => {
 
     useEffect(()=>{
         console.log("b4 useEFF" + search)
-        if(search===""){
-           console.log("search is empty"+search);
-           fetchAllData().then(data => setResData(data));
+        if(search){
+            console.log("search is populated"+search);
+            fetchSearchData(search).then(data => setResData(data));
         } else {
-           console.log("search is populated"+search);
-           fetchSearchData(search).then(data => setResData(data));
+            console.log("search is empty"+search);
+            fetchAllData().then(data => setResData(data));
        }
        
-    },[]);
+    },[search]);
 
 
     const handleSearchForm = (searchTerm: string) => {

@@ -17,7 +17,7 @@ const SearchForm = ({onSubmit}: Prop) => {
     return (
         <form onSubmit={handleSubmit}>
             <input type="text" name="search" value={search} onChange={e => setSearch(e.target.value)}/>
-            <input type="submit" />
+            <button type="submit">Submit</button>
         </form>
     )
 }
